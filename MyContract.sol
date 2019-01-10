@@ -1,3 +1,4 @@
+pragma solidity >=0.4.25 <0.6.0;
 contract MyContract {
   address creater;
   uint256 myNumber;
@@ -7,7 +8,7 @@ contract MyContract {
       myNumber = 3;
   }
   function getCreator() constant returns (address) {
-      return creator;
+    return creator;
   }
   
   function getNumber() constant returns(uint256){

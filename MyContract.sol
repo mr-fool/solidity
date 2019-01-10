@@ -1,16 +1,20 @@
 contract MyContract {
   address creater;
-  uint256 public myNumber;
+  uint256 myNumber;
   
   function getContract() {
       creater = msg.sender;
       myNumber = 3;
   }
+  function getCreator() constant returns (address) {
+      return creator;
+  }
+  
   function getNumber() constant returns(uint256){
     return myNumber;    
   }
   
-  function setMyNumber(uint num) {
+  function setMyNumber(uint256 num) {
       myNumber = num;
   }
 

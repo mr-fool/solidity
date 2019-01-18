@@ -2,10 +2,10 @@ pragma solidity >=0.4.18 <0.6.0;
 
 contract ApprovalContract {
 	address public sender;
-	address public receiver;
+	address payable public receiver;
 	address public constant approver = 0xBB3DcC3a4385A6B20d9A6b8bda47732adD978aF2;
 
-	function deposit(address _receiver) external payable {
+	function deposit(address payable _receiver) external payable {
 		require(msg.value > 0);
 		sender = msg.sender;
 		receiver = _receiver;

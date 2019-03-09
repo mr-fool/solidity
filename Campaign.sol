@@ -12,6 +12,11 @@ contract Campaign {
     uint public minimumContribution;
     address[] public approvers;
     
+    modifier restricted(){
+        require(msg.sender == manager);
+        _;
+    }
+    
     constructor(uint minimum) public {
         manager = msg.sender;
         minimumContribution = minimum;

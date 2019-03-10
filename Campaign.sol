@@ -28,10 +28,10 @@ contract Campaign {
     function createRequest(string memory description,uint value, address recipient) 
         public restricted 
     {
-        Request newRequest = Request({
+        Request memory newRequest = Request({
             description: description,
             value: value,
-            recipient: recipient
+            recipient: recipient,
             complete: false
         });
         requests.push(newRequest);

@@ -42,4 +42,9 @@ contract Campaign {
         });
         requests.push(newRequest);
     }
+    function approveRequest(uint index) public {
+        require(approvers[msg.sender]);
+        require(!requests[index].approvals[msg.sender]);
+        
+    }
 }

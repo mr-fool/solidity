@@ -56,7 +56,8 @@ contract Campaign {
         require(request.approvalCount > (approversCount / 2));
         
         require(!request.complete);
-        request.recipient.transfer(request.value);
+        address payable wallet = address(uint160(address(request.recipient)));
+        wallet.transfer(request.value);
         request.complete = true;
     }
 }
